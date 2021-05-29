@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Calculator</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div style="width:500px; margin:auto; margin-top: 10rem;">
+        <form action="Result.aspx" method="get">
+            <table class="table">
+                <tr>
+                    <td colspan="2">
+                        <h3>Calculator</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="num1">Number 1:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="num1" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="num2">Number 2:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="num2" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="operation">Operation:</label>
+                    </td>
+                    <td>
+                        <select class="form-control" name="operation">
+                            <option>+</option>
+                            <option>-</option>
+                            <option>*</option>
+                            <option>/</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit"
+                               onClick="return confirm('Send with GET?')"
+                               value="Calculate"
+                               class="btn btn-primary form-control" />
+                    </td>
+                <tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
