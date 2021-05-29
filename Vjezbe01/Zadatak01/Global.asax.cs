@@ -17,5 +17,9 @@ namespace Zadatak01
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+        protected void Application_EndRequest(object sender, EventArgs e)
+        {
+            Response.Write($"<hr><div style='text-align:center;'><p>RWA-{DateTime.Now.Year} &copy;</p></div>");
+        }
     }
 }
