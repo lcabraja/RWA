@@ -48,13 +48,15 @@
                                 </select>
                             </td>
                         </tr>
-                        <td>
-                            <input 
-                                type="submit" 
-                                onClick="return confirm('Send with GET?')"
-                                value="Send data with GET method"
-                                class="btn btn-primary form-control"/>
-                        </td>
+                        <tr>
+                            <td>
+                                <input
+                                    type="submit"
+                                    onclick="return confirm('Send with GET?')"
+                                    value="Send data with GET method"
+                                    class="btn btn-primary form-control" />
+                            </td>
+                        </tr>
                     </table>
                 </form>
             </div>
@@ -95,13 +97,15 @@
                                 </select>
                             </td>
                         </tr>
-                        <td>
-                            <input 
-                                type="submit" 
-                                onClick="return doPost()"
-                                value="Send data with POST method"
-                                class="btn btn-primary form-control"/>
-                        </td>
+                        <tr>
+                            <td>
+                                <input
+                                    type="submit"
+                                    onclick="return doPost()"
+                                    value="Send data with POST method"
+                                    class="btn btn-primary form-control" />
+                            </td>
+                        </tr>
                     </table>
                 </form>
             </div>
