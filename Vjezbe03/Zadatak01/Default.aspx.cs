@@ -37,7 +37,7 @@ namespace Zadatak01
 
         protected void submit_Click(object sender, EventArgs e)
         {
-            NumberOfColors = int.Parse(tbColors.Text)
+            NumberOfColors = int.Parse(tbColors.Text);
             ShowInputFields();
             ShowButton();
 
