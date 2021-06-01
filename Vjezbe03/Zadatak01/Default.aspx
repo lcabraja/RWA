@@ -6,6 +6,10 @@
 <head runat="server">
     <title>Zadatak01</title>
     <style>
+        body {
+            background-color: #333;
+            color: white;
+        }
         .container {
             width: 400px;
             margin-top: 10rem;
