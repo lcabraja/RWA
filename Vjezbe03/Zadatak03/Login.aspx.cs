@@ -25,7 +25,7 @@ namespace Zadatak03
             cookie["fullName"] = tbName.Text;
             cookie["address"] = tbAddress.Text;
             cookie["email"] = tbEmail.Text;
-            cookie.Expires = DateTime.Now.AddSeconds(30);
+            cookie.Expires = DateTime.Now.AddDays(30);
 
             Response.Cookies.Add(cookie);
             Response.Redirect("Order.aspx");
