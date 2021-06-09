@@ -16,25 +16,36 @@ namespace Zadatak01.Models
         {
             List<Kupac> collection = new List<Kupac>();
             DataSet ds = SqlHelper.ExecuteDataset(cs, "DohvatiKupce");
-            foreach (DataRow in ds.Tables[0].Rows)
+            foreach (DataRow row in ds.Tables[0].Rows)
             {
-
+                collection.Add(GetKupacFromDataRow(row));
             }
+            return collection;
         }
 
         public static Kupac GetKupac(int IDKupac)
         {
-            return null;
+            DataSet ds = SqlHelper.ExecuteDataset(cs, "DohvatiKupca", IDKupac);
+            DataRow row = ds.Tables[0].Rows[0];
+
+            return GetKupacFromDataRow(row);
+            
         }
 
         public static List<Grad> GetGradovi()
         {
-            return null;
+            List<Grad> collection = new List<Grad>();
+            DataSet ds = SqlHelper.ExecuteDataset(cs, "DohvatiGradove");
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                collection.Add(GetGradFromDataRow(row));
+            }
+            return collection;
         }
 
         public static int GetKupciCount()
         {
-            return -1;
+            return (int)SqlHelper.ExecuteScalar(cs, "DohvatiBrojKupaca");
         }
 
         private static Kupac GetKupacFromDataRow(DataRow row)
@@ -43,10 +54,10 @@ namespace Zadatak01.Models
             {
                 IDKupac = (int)row["IDKupac"],
                 Ime = row["ime"].ToString(),
-                Prezime = row["ime"].ToString(),
-                Email = row["ime"].ToString(),
-                Telefon = row["ime"].ToString(),
-                Grad = null
+                Prezime = row["prezime"].ToString(),
+                Email = row["email"].ToString(),
+                Telefon = row["telefon"].ToString(),
+                Grad = GetGradFromDataRow(row)
             };
         }
 

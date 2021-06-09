@@ -11,6 +11,7 @@ namespace Zadatak01.Models
         public string Ime { get; set; }
         public string Prezime { get; set; }
         public string Email { get; set; }
+        public string Telefon { get; set; }
         public Grad Grad { get; set; }
     }
 }
