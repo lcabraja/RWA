@@ -47,7 +47,15 @@ namespace Zadatak01.Models
         {
             return (int)SqlHelper.ExecuteScalar(cs, "DohvatiBrojKupaca");
         }
+        public static void  UpdateKupac(Kupac kupac)
+        {
+            SqlHelper.ExecuteNonQuery(cs, "UpdateKupac", kupac.IDKupac, kupac.Ime, kupac.Prezime, kupac.Email, kupac.Telefon, kupac.Grad.IDGrad);
+        }
 
+        public static void InsertKupac(Kupac kupac)
+        {
+            SqlHelper.ExecuteNonQuery(cs, "InsertKupac", kupac.Ime, kupac.Prezime, kupac.Email, kupac.Telefon, kupac.Grad.IDGrad);
+        }
         private static Kupac GetKupacFromDataRow(DataRow row)
         {
             return new Kupac

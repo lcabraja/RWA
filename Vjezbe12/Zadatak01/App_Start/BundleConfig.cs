@@ -24,6 +24,7 @@ namespace Zadatak01
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/validation.css",
                       "~/Content/site.css"));
         }
     }
