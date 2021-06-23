@@ -10,6 +10,7 @@ namespace Vjezbe14.Models
 {
     public class Repo
     {
+        private static string cloud = ConfigurationManager.ConnectionStrings["cloud"].ConnectionString;
         private static string cs = ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
 
         public static List<Kupac> GetKupci()
@@ -34,14 +35,14 @@ namespace Vjezbe14.Models
 
         public static Kupac GetKupac(int idKupac)
         {
-            DataSet ds = SqlHelper.ExecuteDataset(cs, "DohvatiKupce");
+            DataSet ds = SqlHelper.ExecuteDataset(cs, "DohvatiJednogKupca", idKupac);
             DataRow row = ds.Tables[0].Rows[0];
             return new Kupac
             {
                 IDKupac = (int)row["IDKupac"],
-                Ime = row["Ime"].ToString(),
-                Prezime = row["Prezime"].ToString(),
-                Email = row["Email"].ToString()
+                Ime = row["Ime"].ToString() ?? "0",
+                Prezime = row["Prezime"].ToString() ?? "0",
+                Email = row["Email"].ToString() ?? "0"
             };
         }
 
