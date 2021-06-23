@@ -25,4 +25,3 @@ BEGIN
 	SELECT COUNT(*) FROM Kupac
 END
 GO
-exec DohvatiKupce
